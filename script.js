@@ -13,9 +13,18 @@ let timerInterval = null;
 let elapsedTime = 0;
 let matchedPairs = 0;
 
-function createBoard() {
+function shuffleCards(array) {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+}
 
-  cards.forEach(cardData => {
+function createBoard(cardsToUse) {
+
+  cardsToUse.forEach(cardData => {
 
     const card = document.createElement('div');
     card.classList.add('card');
@@ -130,7 +139,8 @@ function startGame() {
     console.log('Audio playback started');
   });
 
-  createBoard();
+  const shuffledCards = shuffleCards(cards);
+  createBoard(shuffledCards);
 
   timerInterval = setInterval(() => {
     elapsedTime++;
