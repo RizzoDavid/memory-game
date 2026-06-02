@@ -131,7 +131,7 @@ function startGame() {
   elapsedTime = 0;
   matchedPairs = 0;
 
-  timerDisplay.textContent = '0';
+  timerDisplay.textContent = '0.00';
   startBtn.textContent = 'Game Started';
   startBtn.disabled = true;
 
@@ -143,9 +143,10 @@ function startGame() {
   createBoard(shuffledCards);
 
   timerInterval = setInterval(() => {
-    elapsedTime++;
-    timerDisplay.textContent = elapsedTime;
-  }, 1000);
+    elapsedTime += 10;
+    const seconds = (elapsedTime / 1000).toFixed(2);
+    timerDisplay.textContent = seconds;
+  }, 10);
 
 }
 
@@ -157,7 +158,7 @@ function endGame() {
   gameAudio.pause();
   gameAudio.currentTime = 0;
 
-  startBtn.textContent = `Play Again (${elapsedTime}s)`;
+  startBtn.textContent = `Play Again (${(elapsedTime / 1000).toFixed(2)}s)`;
   startBtn.disabled = false;
 
 }
