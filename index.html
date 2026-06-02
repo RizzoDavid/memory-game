@@ -10,9 +10,24 @@
 </head>
 <body>
 
-  <h1>MecKidz Memory Match</h1>
+  <img src="memory challenge logo.png" alt="Memory Challenge Logo" class="logo">
+
+  <div class="game-info">
+    <div class="timer">Time: <span id="timerDisplay">0</span>s</div>
+    <button id="startBtn" class="start-btn">Start Game</button>
+  </div>
 
   <div class="game-board" id="gameBoard"></div>
+
+  <div class="verse">
+    <p>God so loved the world that He gave His one and only son. Anyone who believes in Him will not die but will have eternal life.</p>
+    <p class="reference">(John 3:16)</p>
+  </div>
+
+  <audio id="gameAudio" controls>
+    <source src="John316 song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
   <script type="module" src="script.js"></script>
 
