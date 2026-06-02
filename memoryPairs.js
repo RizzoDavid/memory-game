@@ -1,7 +1,7 @@
 const memoryCards = [
   {
     id: 1,
-    image: "images/card1.png",
+    image: "/images/card1.png",
     matchId: "card1"
   },
   {
