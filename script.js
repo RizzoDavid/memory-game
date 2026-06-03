@@ -199,7 +199,6 @@ function endGame() {
   clearInterval(timerInterval);
 
   gameAudio.pause();
-  gameAudio.currentTime = 0;
 
   saveHighScore(elapsedTime);
   displayLeaderboard();
